@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { findCharacters } from '../services/heyArnoldApi';
 import CharacterList from '../components/characters/CharacterList';
 
@@ -17,12 +18,14 @@ export default class HeyArnoldContainer extends Component {
   render() {
     const { loading, characters } = this.state;
 
-    if(loading) {
+    if (loading) {
       return (
         <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
           alt="loading spinner"
         />
-      );}
+      );
+    }
+
     return <CharacterList characters={characters} />;
   }
 }
