@@ -17,7 +17,11 @@ export default class HeyArnoldContainer extends Component {
   render() {
     const { loading, characters } = this.state;
 
-    if(loading) return <h1>Loading...</h1>;
+    if(loading) return (
+      <img src="https://giphy.com/embed/11ASZtb7vdJagM"
+        alt="loading spinner"
+      />
+    );
     return <CharacterList characters={characters} />;
   }
 }
