@@ -7,6 +7,8 @@ describe('Hey Arnold Container', () => {
     render(<HeyArnoldContainer />);
 
     screen.getByText('Loading...');
+
+    const ul = await screen.findByRole('list', { name: 'character' });
   });
 });
 
