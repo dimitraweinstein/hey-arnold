@@ -6,9 +6,5 @@ exports[`App component renders App 1`] = `
     alt="loading spinner"
     src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
   />
-  <img
-    alt="loading spinner"
-    src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
-  />
 </DocumentFragment>
 `;

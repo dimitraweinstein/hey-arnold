@@ -9,22 +9,23 @@ import HeyArnoldDetailsContainer from '../../containers/HeyArnoldDetailContainer
 
 
 
-const AppRouter = () => {
+export default function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={HeyArnoldContainer} />
-        <Route path="/details" exact component={HeyArnoldDetailsContainer} />
+        <Route path="/:id" exact component={HeyArnoldDetailsContainer} />
       </Switch>
     </Router>
   );
-};
-
-export default function App() {
-  return <>
-    <HeyArnoldContainer> <AppRouter />
-    </HeyArnoldContainer>
-    <HeyArnoldDetailsContainer> <AppRouter />
-    </HeyArnoldDetailsContainer>
-  </>;
 }
+
+
+// export default function App() {
+//   return <>
+//     <HeyArnoldContainer> <AppRouter />
+//     </HeyArnoldContainer>
+//     <HeyArnoldDetailsContainer> <AppRouter />
+//     </HeyArnoldDetailsContainer>
+//   </>;
+// }
