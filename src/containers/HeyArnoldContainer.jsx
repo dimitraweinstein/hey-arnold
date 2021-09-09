@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CharacterList from '../components/characters/CharacterList';
 import { findCharacters } from '../services/heyArnoldApi';
+import CharacterList from '../components/characters/CharacterList';
 
 export default class HeyArnoldContainer extends Component {
   state = {
@@ -17,11 +17,14 @@ export default class HeyArnoldContainer extends Component {
   render() {
     const { loading, characters } = this.state;
 
-    if(loading) return (
-      <img src="https://giphy.com/embed/11ASZtb7vdJagM"
-        alt="loading spinner"
-      />
-    );
+    if(loading) {
+      return (
+        <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
+          alt="loading spinner"
+        />
+      );
+    }
+    
     return <CharacterList characters={characters} />;
   }
 }

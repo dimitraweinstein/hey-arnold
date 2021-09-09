@@ -9,3 +9,13 @@ export const findCharacters = () => {
       }))
     );
 };
+
+export const findCharacterById = (id) => {
+  return fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters/${id}`)
+    .then((res) => res.json())
+    .then((json) => ({
+      id: json._id,
+      name: json.name,
+      image: json.image
+    }));
+};

@@ -4,7 +4,7 @@ exports[`App component renders App 1`] = `
 <DocumentFragment>
   <img
     alt="loading spinner"
-    src="https://giphy.com/embed/11ASZtb7vdJagM"
+    src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
   />
 </DocumentFragment>
 `;
