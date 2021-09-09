@@ -6,7 +6,11 @@ describe('Hey Arnold Container', () => {
   it('renders a list of characters to the page', async () => {
     render(<HeyArnoldContainer />);
 
-    screen.getByText('Loading...');
+    screen.getByAltText('loading spinner');
+
+    const ul = await screen.findByRole('list', { name: 'characters' });
+
+    expect(ul).toMatchSnapshot();
   });
 });
 
