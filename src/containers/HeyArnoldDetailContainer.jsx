@@ -8,20 +8,18 @@ export default class HeyArnoldDetailContainer extends Component {
     character: {},
   };
 
-  componentDidMount() {
-    // eslint-disable-next-line max-len
-    findCharacterById(this.props.match.params.id)
-      .then((character) =>
-        this.setState({ character, loading: false })
-      );
+  async componentDidMount() {
+    const character = await findCharacterById(this.props.match.params.id);
+    this.setState({ character, loading: false });
   }
 
   render() {
     const { loading, character } = this.state;
     if(loading) {
       return (
-        // eslint-disable-next-line max-len
-        <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
+        <img
+          // eslint-disable-next-line max-len
+          src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
           alt="loading spinner"
         />
       );

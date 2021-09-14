@@ -16,7 +16,7 @@ export const findCharacterById = async (id) => {
   const json = await res.json();
       
   const character = {
-    id: json._id,
+    id: json.id,
     name: json.name,
     image: json.image
   };
