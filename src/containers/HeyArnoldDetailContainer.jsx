@@ -8,8 +8,9 @@ export default class HeyArnoldDetailContainer extends Component {
     character: {}
   };
 
+
   componentDidMount() {
-    findCharacterById().then((character) =>
+    findCharacterById(location.search).then((character) =>
       this.setState({ character, loading: false })
     );
   }
@@ -19,6 +20,7 @@ export default class HeyArnoldDetailContainer extends Component {
     console.log(character);
     if(loading) {
       return (
+        // eslint-disable-next-line max-len
         <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
           alt="loading spinner"
         />

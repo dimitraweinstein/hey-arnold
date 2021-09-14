@@ -5,6 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import HeyArnoldContainer from '../../containers/HeyArnoldContainer';
+// eslint-disable-next-line max-len
 import HeyArnoldDetailsContainer from '../../containers/HeyArnoldDetailContainer';
 
 

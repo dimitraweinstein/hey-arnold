@@ -19,6 +19,7 @@ export default class HeyArnoldContainer extends Component {
 
     if(loading) {
       return (
+        // eslint-disable-next-line max-len
         <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
           alt="loading spinner"
         />
