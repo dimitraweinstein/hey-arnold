@@ -20,13 +20,3 @@ export default function App() {
     </Router>
   );
 }
-
-
-// export default function App() {
-//   return <>
-//     <HeyArnoldContainer> <AppRouter />
-//     </HeyArnoldContainer>
-//     <HeyArnoldDetailsContainer> <AppRouter />
-//     </HeyArnoldDetailsContainer>
-//   </>;
-// }

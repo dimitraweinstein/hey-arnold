@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { findCharacterById } from '../services/heyArnoldApi';
-import Character from '../components/characters/Character';
+import CharacterDetail from '../components/characters/CharacterDetail';
 
 export default class HeyArnoldDetailContainer extends Component {
   state = {
     loading: true,
-    character: {}
+    character: {},
   };
 
-
   componentDidMount() {
-    findCharacterById(location.search).then((character) =>
-      this.setState({ character, loading: false })
-    );
+    // eslint-disable-next-line max-len
+    findCharacterById(this.props.match.params.id)
+      .then((character) =>
+        this.setState({ character, loading: false })
+      );
   }
 
   render() {
     const { loading, character } = this.state;
-    console.log(character);
     if(loading) {
       return (
         // eslint-disable-next-line max-len
@@ -26,6 +26,12 @@ export default class HeyArnoldDetailContainer extends Component {
         />
       );
     }
-    return <Character name={character.name} image={character.image} />;
+    return (
+      <CharacterDetail
+        id={character.id}
+        image={character.image}
+        name={character.name}
+      />
+    );
   }
 }

@@ -5,18 +5,18 @@ import CharacterList from '../components/characters/CharacterList';
 export default class HeyArnoldContainer extends Component {
   state = {
     loading: true,
-    characters: []
+    characters: [],
   };
 
   componentDidMount() {
-    findCharacters().then((characters) =>
-      this.setState({ characters, loading: false })
-    );
+    findCharacters()
+      .then((characters) =>
+        this.setState({ characters, loading: false })
+      );
   }
 
   render() {
     const { loading, characters } = this.state;
-
     if(loading) {
       return (
         // eslint-disable-next-line max-len
@@ -25,7 +25,6 @@ export default class HeyArnoldContainer extends Component {
         />
       );
     }
-    
     return <CharacterList characters={characters} />;
   }
 }
