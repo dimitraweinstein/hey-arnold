@@ -21,11 +21,11 @@ const CharacterList = ({ characters }) => (
 CharacterList.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired
-    })
-  ).isRequired
+    }).isRequired
+  ),
 };
 
 export default CharacterList;
