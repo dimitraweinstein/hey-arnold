@@ -8,9 +8,8 @@ export default class HeyArnoldDetailContainer extends Component {
     character: {},
   };
 
-  
-
   async componentDidMount() {
+    // eslint-disable-next-line react/prop-types
     const character = await findOneCharacter(this.props.match.params.id);
     this.setState({ character, loading: false });
   }

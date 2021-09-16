@@ -11,7 +11,7 @@ export default class HeyArnoldContainer extends Component {
   async componentDidMount() {
     const characters = await findCharacters();
     this.setState({ characters, loading: false });
-    console.log(characters, 'the characters');
+    // console.log(characters, 'the characters');
   }
 
   render() {

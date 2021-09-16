@@ -25,6 +25,7 @@ export const findOneCharacter = (id) => {
 
 // export const findCharacterById = async (id) => {
 //   // eslint-disable-next-line max-len
+// eslint-disable-next-line max-len
 //   const res = await fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters/${id}`);
 //   const json = await res.json();
       
