@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prop-types
 const CharacterDetail = ({ name, image }) => (
-  <div aria-label="detail-view">
+  <div role="detail-view">
     <img src={image} alt={name} />
     <h2>{name}</h2>
   </div>

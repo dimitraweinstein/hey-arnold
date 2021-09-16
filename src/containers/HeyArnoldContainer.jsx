@@ -15,7 +15,7 @@ export default class HeyArnoldContainer extends Component {
   }
 
   render() {
-    const { characters, loading } = this.state;
+    const { loading, characters } = this.state;
     if(loading) {
       return (
         <img

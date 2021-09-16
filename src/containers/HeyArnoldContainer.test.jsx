@@ -11,7 +11,7 @@ describe('Hey Arnold Container', () => {
       </MemoryRouter>
     );
 
-    screen.getByAltText('loading spinner');
+    await screen.getByAltText('loading spinner');
 
     const ul = await screen.findByRole('list', { name: 'characters' });
 
