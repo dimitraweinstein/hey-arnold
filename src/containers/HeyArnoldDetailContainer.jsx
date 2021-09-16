@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { findCharacterById } from '../services/heyArnoldApi';
+import { findOneCharacter } from '../services/heyArnoldApi';
 import CharacterDetail from '../components/characters/CharacterDetail';
 
 export default class HeyArnoldDetailContainer extends Component {
@@ -8,8 +8,10 @@ export default class HeyArnoldDetailContainer extends Component {
     character: {},
   };
 
+  
+
   async componentDidMount() {
-    const character = await findCharacterById(this.props.match.params.id);
+    const character = await findOneCharacter(this.props.match.params.id);
     this.setState({ character, loading: false });
   }
 
@@ -24,12 +26,10 @@ export default class HeyArnoldDetailContainer extends Component {
         />
       );
     }
-    return (
-      <CharacterDetail
-        id={character.id}
-        image={character.image}
-        name={character.name}
-      />
-    );
+    return <CharacterDetail
+      id={character.id}
+      image={character.image}
+      name={character.name}
+    />;
   }
 }

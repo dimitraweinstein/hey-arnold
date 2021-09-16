@@ -4,16 +4,18 @@ import Character from './Character';
 import { Link } from 'react-router-dom';
 
 const CharacterList = ({ characters }) => (
+
   <ul aria-label="characters">
     {characters.map((character) => (
-      <Link key={character.id} to={`/${character.id}`}>
-        <li key={character.id}>
+      <li key={character.id}>
+        <Link to={`/${character.id}`}>
           <Character
+            id={character.id}
             name={character.name}
             image={character.image}
           />
-        </li>
-      </Link>
+        </Link>
+      </li>
     ))}
   </ul>
 );

@@ -1,25 +1,38 @@
-export const findCharacters = async () => {
+export const findCharacters = () => {
   // eslint-disable-next-line max-len
-  const res = await fetch('https://hey-arnold-api.herokuapp.com/api/v1/characters');
-  const json = await res.json();
-    
-  return json.results.map((character) => ({
-    id: character.id,
-    name: character.name,
-    image: character.image
-  }));
+  return fetch('https://hey-arnold-api.herokuapp.com/api/v1/characters')
+    .then((res) => res.json())
+    .then((json) =>
+      json.map((character) => ({
+        id: character._id,
+        name: character.name,
+        image: character.image,
+      }))
+    );
 };
 
-export const findCharacterById = async (id) => {
+
+export const findOneCharacter = (id) => {
   // eslint-disable-next-line max-len
-  const res = await fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters/${id}`);
-  const json = await res.json();
+  return fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters/${id}`)
+    .then((res) => res.json())
+    .then((json) => ({
+      id: json._id,
+      name: json.name,
+      image: json.image,
+    }));
+};
+
+// export const findCharacterById = async (id) => {
+//   // eslint-disable-next-line max-len
+//   const res = await fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters/${id}`);
+//   const json = await res.json();
       
-  const character = {
-    id: json.id,
-    name: json.name,
-    image: json.image
-  };
+//   const character = {
+//     id: json.id,
+//     name: json.name,
+//     image: json.image,
+//   };
 
-  return character;
-};
+//   return character;
+// };

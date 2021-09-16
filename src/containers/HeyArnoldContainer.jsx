@@ -11,10 +11,11 @@ export default class HeyArnoldContainer extends Component {
   async componentDidMount() {
     const characters = await findCharacters();
     this.setState({ characters, loading: false });
+    console.log(characters, 'the characters');
   }
 
   render() {
-    const { loading, characters } = this.state;
+    const { characters, loading } = this.state;
     if(loading) {
       return (
         <img
@@ -24,9 +25,6 @@ export default class HeyArnoldContainer extends Component {
         />
       );
     }
-    return (
-      <CharacterList
-        characters={characters} />
-    );
+    return <CharacterList characters={characters} />;
   }
 }
