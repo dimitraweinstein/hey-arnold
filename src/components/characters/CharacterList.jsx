@@ -4,16 +4,18 @@ import Character from './Character';
 import { Link } from 'react-router-dom';
 
 const CharacterList = ({ characters }) => (
+
   <ul aria-label="characters">
     {characters.map((character) => (
-      <Link key={character.id} to={`/${character.id}`}>
-        <li>
+      <li key={character.id}>
+        <Link to={`/${character.id}`}>
           <Character
+            id={character.id}
             name={character.name}
             image={character.image}
           />
-        </li>
-      </Link>
+        </Link>
+      </li>
     ))}
   </ul>
 );
@@ -21,10 +23,11 @@ const CharacterList = ({ characters }) => (
 CharacterList.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired
-    })
-  ).isRequired
+    }).isRequired
+  ),
 };
 
 export default CharacterList;

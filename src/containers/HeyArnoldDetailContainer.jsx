@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
-import { findCharacterById } from '../services/heyArnoldApi';
-import Character from '../components/characters/Character';
+import { findOneCharacter } from '../services/heyArnoldApi';
+import CharacterDetail from '../components/characters/CharacterDetail';
 
 export default class HeyArnoldDetailContainer extends Component {
   state = {
     loading: true,
-    character: {}
+    character: {},
   };
 
-  componentDidMount() {
-    findCharacterById().then((character) =>
-      this.setState({ character, loading: false })
-    );
+  async componentDidMount() {
+    // eslint-disable-next-line react/prop-types
+    const character = await findOneCharacter(this.props.match.params.id);
+    this.setState({ character, loading: false });
   }
 
   render() {
     const { loading, character } = this.state;
-    console.log(character);
     if(loading) {
       return (
-        <img src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
+        <img
+          // eslint-disable-next-line max-len
+          src="https://icon-library.com/images/ajax-loading-icon/ajax-loading-icon-2.jpg"
           alt="loading spinner"
         />
       );
     }
-    return <Character name={character.name} image={character.image} />;
+    return <CharacterDetail
+      id={character.id}
+      image={character.image}
+      name={character.name}
+    />;
   }
 }

@@ -1,12 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import HeyArnoldContainer from '../containers/HeyArnoldContainer';
+import { MemoryRouter } from 'react-router';
 
 describe('Hey Arnold Container', () => {
   it('renders a list of characters to the page', async () => {
-    render(<HeyArnoldContainer />);
+    render(
+      <MemoryRouter>
+        <HeyArnoldContainer />
+      </MemoryRouter>
+    );
 
-    screen.getByAltText('loading spinner');
+    await screen.getByAltText('loading spinner');
 
     const ul = await screen.findByRole('list', { name: 'characters' });
 
